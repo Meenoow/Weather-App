@@ -71,6 +71,7 @@ function formatDate(date) {
   
   let celsiusLink = document.querySelector("#celsius-link");
   celsiusLink.addEventListener("click", convertToCelsius);
+  
   //search and show live data
   function displayWeather(response) {
     document.querySelector("#city").innerHTML = response.data.name;
@@ -79,10 +80,12 @@ function formatDate(date) {
     );
     document.querySelector("#humidity").innerHTML = response.data.main.humidity;
     document.querySelector("#wind").innerHTML = Math.round(
-      response.data.main.wind.speed
+      response.data.wind.speed
     );
-    document.querySelector("#description").innerHTML =
-      response.data.weather[0].main;
+    document.querySelector("#description").innerHTML = response.data.weather[0].description;
+
+    let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   }
   //default
   init("New York");
