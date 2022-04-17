@@ -46,7 +46,7 @@ function formatDate(date) {
     let city = document.querySelector("#city-input").value;
     init(city);
   }
- // 
+
   function showFahrenheitTemp(event) {
     event.preventDefault();
     let fahrenheitTemperature = (celsiusTemperature * 9) /5 + 32;
@@ -73,14 +73,14 @@ function formatDate(date) {
   celsiusLink.addEventListener("click", showCelsiusTemp);
 
 let celsiusTemperature = null
-//
+
   let dateElement = document.querySelector("#date");
   let currentTime = new Date();
   dateElement.innerHTML = formatDate(currentTime);
   
   let searchForm = document.querySelector("#search-form");
   searchForm.addEventListener("submit", search);
-  //search and show live data
+
   function displayWeather(response) {
     document.querySelector("#city").innerHTML = response.data.name;
     document.querySelector("#temperature").innerHTML = Math.round(
@@ -97,9 +97,9 @@ let celsiusTemperature = null
 
   celsiusTemperature = response.data.main.temp;
   }
-  //default
+
   init("New York");
-  //location
+
   let currentLocationButton = document.querySelector("#current-location-button");
   currentLocationButton.addEventListener("click", getCurrentLocation);
   
