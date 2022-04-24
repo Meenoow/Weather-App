@@ -71,6 +71,7 @@ body {
     margin: auto;
     border-radius: 10px;
     max-width: 600px;
+    opacity: 0.5;
   }
   
   .card-body {
@@ -81,30 +82,17 @@ body {
     margin: 5px auto;
   }
   
-  .btn-info {
-    background-color: cornflowerblue;
-    border-color: cornflowerblue;
-    font-size: 11px;
-    margin: 0px auto;
-    border-radius: 10px;
-    max-width: 110px;
-  }
   
   .btn-primary {
-    background-color: cornflowerblue;
-    border-color: cornflowerblue;
+    background-color: #6e6a75;
+    border-color: #6e6a75;
   
   }
   .btn-success {
-    background-color: cornflowerblue;
-    border-color: cornflowerblue;
+    background-color: #6e6a75;
+    border-color: #6e6a75;
   }
   
-  .btn-secondary {
-    background-color: #7c7c7c;
-    border-color: #7c7c7c;
-  }
-
  .source-code {
    font-size: 11px;
    margin: 10px;
@@ -112,6 +100,15 @@ body {
    position: relative;
  }
 
- .units {
-  color: white;
+ .weather-forecast {
+   margin-top: 20px;
+   text-align: center;
+ }
+
+ .weather-forecast-date {
+   font-size: 16px;
+ }
+
+ .weather-forecast-temp {
+   font-size: 13px;
  }
