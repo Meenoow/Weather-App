@@ -113,3 +113,8 @@ body {
  .weather-forecast-temp {
    font-size: 10px;
  }
+
+ .weather-forecast-temp-min {
+  opacity: 0.3px; 
+  color: rgb(141, 139, 139);
+ }
