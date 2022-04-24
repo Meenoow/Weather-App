@@ -73,6 +73,35 @@ function formatDate(date) {
   celsiusLink.addEventListener("click", showCelsiusTemp);
 
 let celsiusTemperature = null
+//forecast
+function displayForecast() {
+let forecastElement = document.querySelector("#forecast");
+
+let forecastHTML = `<div class="row">`;
+let days = ["Thu", "Fri", "Sat", "Sun"];
+days.forEach(function(day) {
+  forecastHTML = 
+forecastHTML + 
+`
+<div class="col-2"> 
+  <div class="weather-forecast-date">${day}</div>
+    <img 
+    src="http://openweathermap.org/img/wn/01d@2x.png"
+    alt=""
+    width="36"/>
+    <br>
+    <div class="weather-forecast-temp">
+      <span clas="weather-forecast-temp-max">18˚</span> 
+      <span class="weather-forecast-temp-min">12˚ </span>
+  </div>
+</div>
+`;
+});
+
+forecastHTML = forecastHTML + `</div>`;
+forecastElement.innerHTML = forecastHTML;
+}
+
 
   let dateElement = document.querySelector("#date");
   let currentTime = new Date();
@@ -95,11 +124,12 @@ let celsiusTemperature = null
     let iconElement = document.querySelector("#icon");
   iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 
+  
   celsiusTemperature = response.data.main.temp;
   }
 
   init("New York");
-
+  displayForecast();
   let currentLocationButton = document.querySelector("#current-location-button");
   currentLocationButton.addEventListener("click", getCurrentLocation);
   
