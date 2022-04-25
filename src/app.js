@@ -24,13 +24,17 @@ function formatDate(date) {
   }
   
   function searchLocation(position) {
+    let latitude = position.coords.latitude;
+    let longitude = position.coords.longitude;
+    let units ="metric";
     let apiKey = "0d55405ea37f9b16a55f03b2fb1326a2";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}
-    &appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=
+    ${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(displayWeather);
   }
   
   function getCurrentLocation(event) {
+    event.preventDefault();
     navigator.geolocation.getCurrentPosition(searchLocation);
   }
   
@@ -73,7 +77,7 @@ function formatDate(date) {
   celsiusLink.addEventListener("click", showCelsiusTemp);
 
 let celsiusTemperature = null
-//forecast
+
 function formatDay(timestamp) {
  let date = new Date(timestamp * 1000);
  let day = date.getDay();
@@ -114,7 +118,6 @@ forecastHTML = forecastHTML + `</div>`;
 forecastElement.innerHTML = forecastHTML;
 }
 
-
 function getForecast(coordinates) {
   let apiKey = "0d55405ea37f9b16a55f03b2fb1326a2";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
@@ -127,7 +130,7 @@ function getForecast(coordinates) {
   
   let searchForm = document.querySelector("#search-form");
   searchForm.addEventListener("submit", search);
-//
+
   function displayWeather(response) {
     document.querySelector("#city").innerHTML = response.data.name;
     document.querySelector("#temperature").innerHTML = Math.round(
@@ -147,8 +150,10 @@ function getForecast(coordinates) {
   getForecast(response.data.coord);
   }
 
-  init("New York");
-  displayForecast();
   let currentLocationButton = document.querySelector("#current-location-button");
   currentLocationButton.addEventListener("click", getCurrentLocation);
+
+  init("New York");
+  displayForecast();
+  
   

@@ -9,57 +9,54 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
-		/>
-		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
     <title>Weather App</title>
   </head>
 
   <body>
     <div class="card bg-dark text-white">
-      <img src="https://images.wallpapersden.com/image/download/
-      firewatch-video-games-mountains_a2hlZ22UmZqaraWkpJRnamtlrWZpaWU.jpg" 
-      class="card-img" alt="...">
-      <div class="card-img-overlay">
+      <div class="container">
         <form class="search-form" id="search-form">
           <div class="row">
             <div class="col-6">
               <input
-							  type="search"
+                type="search"
                 placeholder="Enter city"
                 autofocus="on"
                 autocomplete="off"
                 id="city-input"
-                class="form-control shadow-sm"/>
+                class="form-control shadow-sm"
+              />
             </div>
             <div class="col-3">
               <input
-								type="submit"
-								value=Search
+                type="submit"
                 value="Search"
-                class="form-control btn btn-primary shadow-sm"/>
+                value="Search"
+                class="form-control btn btn-primary shadow-sm"
+              />
             </div>
             <div class="col-3">
-              <button 
-              class="btn btn-success w-100" id="current-location-button">📍</button>
+              <button
+                class="btn btn-success"
+                id="current-location-button"
+              >
+                📍
+              </button>
             </div>
           </div>
         </form>
-        <h1 id="city">
-        </h1>
+        <h1 id="city"></h1>
         <ul>
           <li id="date"></li>
-          <li id="description"> Partly Cloudy
-          </li>
+          <li id="description">Partly Cloudy</li>
         </ul>
         <div class="row">
           <div class="col-6">
             <div class="clearfix">
-              <img
-                src=""
-                id="icon"
-                class="weather-icon float-left"
-              />
+              <img src="" id="icon" class="weather-icon float-left" />
               <div class="float-left">
                 <span class="temperature" id="temperature"></span>
                 <span class="units">
@@ -71,27 +68,23 @@
           </div>
           <div class="col-6">
             <ul>
-              <li>
-                Humidity: <span 
-                id="humidity"></span>%
-              </li>
-              <li>
-                Wind: <span 
-                id="wind"></span> km/h
-              </li>  
-            </div>
-        </div> 
+              <li>Humidity: <span id="humidity"></span>%</li>
+              <li>Wind: <span id="wind"></span> km/h</li>
+            </ul>
+          </div>
+        </div>
         <div class="weather-forecast" id="forecast">
           <div class="row">
             <div class="col-2">
               <div class="weather-forecast-date">Thu</div>
-              <img 
-              src="http://openweathermap.org/img/wn/01d@2x.png"
-              alt=""
-              width="36"/>
-              <br>
+              <img
+                src="http://openweathermap.org/img/wn/01d@2x.png"
+                alt=""
+                width="36"
+              />
+              <br />
               <div class="weather-forecast-temp">
-                <span clas="weather-forecast-temp-max">18˚</span> 
+                <span clas="weather-forecast-temp-max">18˚</span>
                 <span class="weather-forecast-temp-min">12˚ </span>
               </div>
             </div>
@@ -99,12 +92,12 @@
         </div>
       </div>
       <footer class="source-code">
-        <a href="https://github.com/Meenoow/Weather-App" id="open-link">Open-source code</a>
+        <a href="https://github.com/Meenoow/Weather-App" id="open-link"
+          >Open-source code</a
+        >
         <a>by Mena Castillo</a>
       </footer>
-		</div>	
-   </div>
-    
+    </div>
     <script src="src/app.js"></script>
   </body>
 </html>
