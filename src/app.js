@@ -28,8 +28,7 @@ function formatDate(date) {
     let longitude = position.coords.longitude;
     let units ="metric";
     let apiKey = "0d55405ea37f9b16a55f03b2fb1326a2";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=
-    ${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(displayWeather);
   }
   
@@ -40,8 +39,7 @@ function formatDate(date) {
   
   function init(city) {
     let apiKey = "0d55405ea37f9b16a55f03b2fb1326a2";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=
-   ${city}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayWeather);
   }
   
@@ -154,6 +152,6 @@ function getForecast(coordinates) {
   currentLocationButton.addEventListener("click", getCurrentLocation);
 
   init("New York");
-  displayForecast();
+  
   
   
